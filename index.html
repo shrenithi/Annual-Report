@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Institutional Annual Report Management System - Integrate, customize, and compile departmental achievements, research publications, grants, and placements into unified PDF reports.">
+  <title>Annual Report Management System</title>
+  
+  <!-- Global Error Logger (Displays browser console errors on screen for instant debugging) -->
+  <script>
+    window.onerror = function(message, source, lineno, colno, error) {
+      // Ignore obfuscated browser cross-origin errors (e.g., from CDN or extensions)
+      if (message === "Script error." || lineno === 0) {
+        console.warn("Non-critical script load anomaly detected. This is typical when running via file:// or offline without CDN access.");
+        return true;
+      }
+      
+      const errBanner = document.getElementById("screen-error-banner") || document.createElement("div");
+      errBanner.id = "screen-error-banner";
+      errBanner.style.cssText = "position:fixed; top:0; left:0; width:100%; background:#ef4444; color:#fff; padding:15px; z-index:99999; font-family:monospace; font-size:12px; border-bottom:3px solid #b91c1c; text-align:left; box-sizing:border-box; line-height:1.5;";
+      errBanner.innerHTML = "<strong>Application Startup Error Detected:</strong><br>" + 
+                            "• Error: " + message + "<br>" +
+                            "• File: " + (source ? source.split('/').pop() : "unknown") + " (Line " + lineno + ":" + colno + ")<br><br>" +
+                            "<small>Please copy this error and share it so we can resolve it instantly.</small>";
+      if (!document.getElementById("screen-error-banner")) {
+        document.body.appendChild(errBanner);
+      }
+      return false;
+    };
+  </script>
+
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="./styles.css">
+  
+  <!-- Chart.js CDN (Loaded synchronously to execute dashboard widgets) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- App Shell Layout -->
+  <div id="app-container">
+    <div style="display: flex; align-items: center; justify-content: center; height: 100vh; width: 100%;">
+      <div class="loading-spinner"></div>
+    </div>
+  </div>
+
+  <!-- Sequential Script Loading (CORS-free File Protocol Support) -->
+  <script src="./js/mockData.js"></script>
+  <script src="./js/translation.js"></script>
+  <script src="./js/db.js"></script>
+  <script src="./js/auth.js"></script>
+  <script src="./js/workflow.js"></script>
+  <script src="./js/versionControl.js"></script>
+  <script src="./js/qrCode.js"></script>
+  <script src="./js/signature.js"></script>
+  <script src="./js/fileUpload.js"></script>
+  <script src="./js/aiService.js"></script>
+  <script src="./js/calendar.js"></script>
+  <script src="./js/comparison.js"></script>
+  <script src="./js/analytics.js"></script>
+  <script src="./js/leaderboard.js"></script>
+  <script src="./js/confetti.js"></script>
+  <script src="./js/commandPalette.js"></script>
+  <script src="./js/charts.js"></script>
+  <script src="./js/userManagement.js"></script>
+  <script src="./js/departmentManagement.js"></script>
+  <script src="./js/studentAchievement.js"></script>
+  <script src="./js/placementManagement.js"></script>
+  <script src="./js/accreditationManagement.js"></script>
+  <script src="./js/securityManagement.js"></script>
+  <script src="./js/reportTemplate.js"></script>
+  <script src="./js/app.js"></script>
+
+</body>
+</html>
